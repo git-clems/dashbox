@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+
+
+.chartHeader {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.399);
+}
+
+.chartContainer {
+  flex: 1;
+  /* max-width: 48%; */
+  min-width: 30%;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 0.1px 0.1px 2px grey;
+  border-radius: 5px;
+}
+
+.page {
+  /* width: 100%; */
+  /* background-color: var(--my-grey-10); */
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.296);
+}
+
+
+
+* {
+  /* background: url(public/background/jvTeRgjFsp66xj8SWxhr7O2J4ud.webp); */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  --primary-color: white;
+  ---appBar-height: 60px;
+  --my-grey-10: rgb(221, 221, 221);
+  --my-blue-dark: rgb(6, 6, 47);
+  --my-button-hover-color: rgba(30, 30, 30, 0.062);
+  --my-button-active-color: rgba(0, 110, 255, 0.25);
+
+  /* --primary-color : rgb(6, 6, 47) */
+  &:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width : 600px) {
+  .chartContainer {
+    min-width: 100%;
+    margin: 2px 0px 2px 0px;
+  }
+}

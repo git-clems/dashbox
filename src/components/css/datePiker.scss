@@ -1,0 +1,28 @@
+.FlatpickrInput {
+    height: 100%;
+    min-width: 220px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datePiker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+        .btn {
+            margin: 0;
+            padding: 0;
+            border-radius: 5px 0px 0px 5px;
+        }
+        .FlatpickrInput {
+            border-radius: 0px 5px 5px 0px;
+            border: 1px solid rgb(219, 219, 219);
+        }
+    
+}
