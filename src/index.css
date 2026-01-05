@@ -10,21 +10,73 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.399);
 }
 
-.chartContainer {
-  flex: 1;
-  /* max-width: 48%; */
-  min-width: 30%;
-  margin: 5px;
-  background-color: white;
-  box-shadow: 0.1px 0.1px 2px grey;
-  border-radius: 5px;
+.orderPage {
+  .chartContainer {
+    margin: 3px;
+    box-shadow: 0.1px 0.1px 2px grey;
+    border-radius: 5px;
+    /* min-width: 90%; */
+    width: 45%;
+    background-color: white;
+
+    .chartHeader {
+      * {
+        border-radius: 0;
+      }
+
+      :first-child {
+        border-radius: 5px 0px 0px 0px;
+      }
+
+      :last-child {
+        border-radius: 0px 5px 0px 0px;
+      }
+    }
+
+    .chartCanva {
+      overflow: auto;
+      overflow-x: hidden;
+      height: 400px;
+      /* display: inline-flex; */
+      /* .pieChart,
+      .lineChart,
+      .barChart {
+        /* background-color: red; */
+      /* display: flex; */
+      /* }  */
+
+      /* .pieChart {
+        background-color: red;
+        height: 400px;
+        contain: content;
+      } */
+       canvas {
+        height: 100% !important;
+        /* width: 100% !important; */
+       }
+    }
+
+
+
+    .table {
+      thead {
+        position: sticky;
+        top: 0;
+        background-color: rgb(240, 240, 240);
+      }
+    }
+  }
 }
 
+
 .page {
-  /* width: 100%; */
-  /* background-color: var(--my-grey-10); */
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.296);
+  background-color: rgba(180, 180, 180, 0.3);
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  /* background-color: white; */
 }
 
 

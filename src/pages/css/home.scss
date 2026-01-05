@@ -1,0 +1,45 @@
+.homePage {
+  .box {
+    background-color: white;
+    border: 2px dashed red;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 3px;
+  }
+
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  // background: rgba(0, 0, 0, 0.503);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalWindow {
+  max-height: 50vh;
+  overflow: auto;
+  background: white;
+  width: 400px;
+  // padding: 20px;
+  border-radius: 15px;
+  animation: scaleIn 0.25s ease;
+  border: 1px solid black;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.405);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1
+  }
+}

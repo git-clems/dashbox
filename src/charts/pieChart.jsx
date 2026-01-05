@@ -1,12 +1,12 @@
 
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale } from 'chart.js';
+import { Eye } from 'lucide-react';
 import { Line, Bar, Pie, Doughnut, Radar, PolarArea } from 'react-chartjs-2';
-import './css/pieChart.scss'
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale);
 
 
-function MyPieChart({title}) {
+function MyPieChart({ title }) {
     const data = {
         labels: ['Direct', 'Social', 'Referral', 'Email', 'Organic'],
         datasets: [
@@ -40,17 +40,22 @@ function MyPieChart({title}) {
     return (
 
         <div className="chartContainer">
-            <div className="chartHeader">
-                <select name="" id="" className="btn" >
-                    <option value="" disabled style={{ backgroundColor: '#999', color: "white" }}>Display option</option>
-                    <option value="">Chart</option>
-                    <option value="">Table</option>
-                </select>
-                <button className="btn">Export data</button>
-                <button className="btn">Print</button>
+            <div className="chartHeader flex justify-between">
+                <div>
+                    <select name="" id="" className="btn" onChange={(e) => setDisplay(e.target.value)}>
+                        <option value="chartDisplay">Chart</option>
+                        <option value="tableDisplay">Table</option>
+                    </select>
+                    <button className="btn">Export data</button>
+                    <button className="btn">Print</button>
+                </div>
+                <button className='btn'>
+                    <Eye />
+                </button>
             </div>
-            <Pie data={data} className='pieCanva' options={options}/>
-            {/* <Pie data={data} className='pieCanva' /> */}
+            <div className='chartCanva'>
+                <Pie data={data} className='pieChart' options={options} />
+            </div>
         </div>
     );
 }

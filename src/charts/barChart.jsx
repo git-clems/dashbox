@@ -1,14 +1,14 @@
 
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale } from 'chart.js';
 import { Line, Bar, Pie, Doughnut, Radar, PolarArea } from 'react-chartjs-2';
-import './css/barChart.scss'
 import Table from './table';
 import { useEffect, useState } from 'react';
+import { Eye } from 'lucide-react';
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale);
 
 
-function MyBarChart({}) {
+function MyBarChart({ }) {
   const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
@@ -53,21 +53,24 @@ function MyBarChart({}) {
 
 
   return (
-    <div className="chartContainer barChart">
-      <div className="chartHeader">
-        <select name="" id="" className="btn" onChange={(e) => setDisplay(e.target.value)}>
-          <option value="chartDisplay">Chart</option>
-          <option value="tableDisplay">Table</option>
-        </select>
-        <button className="btn">Export data</button>
-        <button className="btn">Print</button>
+    <div className="chartContainer">
+      <div className="chartHeader flex justify-between">
+        <div>
+          <select name="" id="" className="btn" onChange={(e) => setDisplay(e.target.value)}>
+            <option value="chartDisplay">Chart</option>
+            <option value="tableDisplay">Table</option>
+          </select>
+          <button className="btn">Export data</button>
+          <button className="btn">Print</button>
+        </div>
+        <button className='btn'>
+          <Eye />
+        </button>
       </div>
-      {
-        display == 'chartDisplay' && <Bar data={data} options={options} className='chart' />
-      }
-      {
-        display == 'tableDisplay' && <Table/>
-      }
+      <div className='chartCanva'>
+        {display == 'chartDisplay' && <Bar data={data} options={options} className='barChart' />}
+        {display == 'tableDisplay' && <Table />}
+      </div>
     </div>
   );
 }

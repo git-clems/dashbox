@@ -13,7 +13,7 @@ const AppBar = () => {
         const AppBar = document.querySelector('.appBar')
         if (pageRectTop < 80) {
             AppBar.style.backgroundColor = "white"
-            AppBar.style.boxShadow = "10px 0px 5px 5px rgba(0, 0, 0, 0.3)"
+            AppBar.style.boxShadow = "10px 0px 5px 1px rgba(0, 0, 0, 0.3)"
         } else {
             AppBar.style.backgroundColor = "transparent"
             AppBar.style.boxShadow = ""

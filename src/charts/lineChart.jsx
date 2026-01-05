@@ -1,14 +1,14 @@
 
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale } from 'chart.js';
+import { Eye } from 'lucide-react';
 import { Line, Bar, Pie, Doughnut, Radar, PolarArea } from 'react-chartjs-2';
-import './css/lineChart.scss'
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend, Filler, RadialLinearScale);
 
 
 function MyLineChart({
     xCoord /* X axis data (array) */,
-    yCoord /* Y axis data (array) */, 
+    yCoord /* Y axis data (array) */,
     xLabel /* the title of X axis (string)*/,
     yLabel, /* the title of Y axis (string)*/
     label, /* the label (string)*/
@@ -58,16 +58,22 @@ function MyLineChart({
     return (
 
         <div className="chartContainer">
-            <div className="chartHeader">
-                <select name="" id="" className="btn" >
-                    <option value="" disabled style={{ backgroundColor: '#999', color: "white" }}>Display option</option>
-                    <option value="">Chart</option>
-                    <option value="">Table</option>
-                </select>
-                <button className="btn">Export data</button>
-                <button className="btn">Print</button>
+            <div className="chartHeader flex justify-between">
+                <div>
+                    <select name="" id="" className="btn" onChange={(e) => setDisplay(e.target.value)}>
+                        <option value="chartDisplay">Chart</option>
+                        <option value="tableDisplay">Table</option>
+                    </select>
+                    <button className="btn">Export data</button>
+                    <button className="btn">Print</button>
+                </div>
+                <button className='btn'>
+                    <Eye />
+                </button>
             </div>
-            <Line data={data} options={options} label={xCoord} className='chartCanva' />
+            <div className='chartCanva'>
+                <Line data={data} options={options} label={xCoord} className='lineChart' />
+            </div>
         </div>
     );
 }
