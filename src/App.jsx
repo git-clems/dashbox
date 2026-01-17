@@ -5,14 +5,12 @@ import NotFound from './pages/notFound'
 import AppBar from './components/appBar'
 import SideBar from './components/sideBar'
 import Order from './pages/order'
-// import './App.css'
-// const [open, setOpen] = useState(true)
 
 function App() {
 
   return (
     <div className='flex'>
-      <SideBar open={open}></SideBar>
+      <SideBar></SideBar>
       <div style={{ width: "100%" }}>
         <AppBar></AppBar>
         <Routes>
